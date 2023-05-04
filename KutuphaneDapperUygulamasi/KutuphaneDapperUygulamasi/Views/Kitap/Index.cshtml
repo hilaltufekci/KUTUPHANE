@@ -1,0 +1,50 @@
+﻿@model IEnumerable<KutuphaneDapperUygulamasi.Models.Kitap>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "EY")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KitapAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tür)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yayinevi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SayfaSayisi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.KitapAdi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Tür)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Yayinevi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SayfaSayisi)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "EY", new { id=item.KitapNo}) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.KitapNo })
+    </td>
+</tr>
+}
+
+</table>

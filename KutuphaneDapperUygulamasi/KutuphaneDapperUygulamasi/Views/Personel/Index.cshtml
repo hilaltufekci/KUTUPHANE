@@ -1,0 +1,50 @@
+﻿@model IEnumerable<KutuphaneDapperUygulamasi.Models.Personel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "EY")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonelAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonelSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonelYas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonelMaas)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.PersonelAdi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PersonelSoyad)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PersonelYas)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PersonelMaas)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "EY", new { id=item.PersonelNo }) |
+        @Html.ActionLink("Delete", "Delete", new {id=item.PersonelNo })
+    </td>
+</tr>
+}
+
+</table>
